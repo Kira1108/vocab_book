@@ -92,8 +92,7 @@ if analyze:
     with st.container(border = True, height = 500):
         with st.spinner("Analyzing..."):
             prompt = "The following is a sentence that uses the word, try to figure out if there are any grammar or other kinds of mistakes. \
-                Be sure we are focusing on learning the current word. \
-                The sentence is :"
+                The sentence in question is :"
             response = st.session_state.learner.ask(prompt+sentence)
             st.markdown(response)
 
