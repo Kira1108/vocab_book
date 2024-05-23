@@ -85,11 +85,10 @@ sentence = st.text_area(
     "Create a sentence with this word."
     )
 
-st.write(f"You wrote {len(sentence)} characters.")
-
 analyze = st.button("Aanalyze", use_container_width=True, key = 'analyze_sentence')
 if analyze:
     with st.container(border = True, height = 500):
+        st.success(f"You wrote {len(sentence.split(' '))} words.")
         with st.spinner("Analyzing..."):
             prompt = "The following is a sentence that uses the word, try to figure out if there are any grammar or other kinds of mistakes. \
                 The sentence in question is :"
