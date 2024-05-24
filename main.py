@@ -50,6 +50,14 @@ with st.sidebar:
         ("random", "sequential"),
     )
 
+    change_learner = st.button("Change Learner", use_container_width=True)
+    
+    if change_learner:
+        st.session_state.learner = get_learner(
+            jupyter = False, 
+            type = model,
+            remote_model_name=model_name, 
+            mode = learning_mode)
 
 
 if "learner" not in st.session_state:
