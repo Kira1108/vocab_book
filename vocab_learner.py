@@ -170,7 +170,8 @@ def get_learner(type = 'local',mode:str = 'random', llama_api_key = None, jupyte
             llama_api_key = os.getenv("LLAMA_API_KEY")
             if llama_api_key is None:
                 raise ValueError("No Llama API key provided")
-    
+
+        print(f"Loading remote model {remote_model_name}")
         return Learner(
             mode = mode,
             model = LlamaAPI(
