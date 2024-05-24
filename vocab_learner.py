@@ -161,7 +161,11 @@ class Learner:
             return resp.message.content        
       
      
-def get_learner(type = 'local',mode:str = 'random', llama_api_key = None, jupyter = True, remote_model_name:str = 'mixtral-8x7b-instruct'):
+def get_learner(type = 'local',
+                mode:str = 'random', 
+                llama_api_key = None, 
+                jupyter = True, 
+                remote_model_name:str = 'mixtral-8x7b-instruct'):
     
     if type == 'remote':
         # if no api key is provided, try to load from .env file
